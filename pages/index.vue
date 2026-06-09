@@ -327,12 +327,11 @@
           </div>
 
           <!-- Project Gallery Grid -->
-          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-on-scroll">
             <article 
               v-for="(item, index) in filteredProjects" 
               :key="item.title"
-              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#0505D9]/20 transition-all duration-300 cursor-pointer reveal-on-scroll"
-              :class="`delay-${(index % 3) * 100}`"
+              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#0505D9]/20 transition-all duration-300 cursor-pointer"
               @click="openProjectModal(item)"
             >
               <!-- Project Image Container -->
@@ -544,7 +543,7 @@
                       </label>
                     </div>
 
-                    <div class="mt-6 flex gap-3">
+                    <div class="mt-2 flex gap-3">
                       <button 
                         class="px-5 py-3 bg-[#D31310] hover:bg-[#B00F0C] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex-1 flex justify-center items-center gap-2 shadow-md"
                         type="submit"
@@ -749,6 +748,18 @@ const mobileOpen = ref(false)
 const contactFlipped = ref(false)
 const activeSection = ref('hero')
 const activeAboutTab = ref('values')
+
+const isDark = ref(false)
+
+function toggleDarkMode() {
+  isDark.value = !isDark.value
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+}
 
 // 3D Logo tilt values
 const logoTilt = ref({ x: 0, y: 0 })
@@ -1095,6 +1106,16 @@ let statsObserver: IntersectionObserver | null = null
 let revealObserver: IntersectionObserver | null = null
 
 onMounted(() => {
+  // Initialize dark mode from localStorage or system preferences
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    isDark.value = true
+    document.documentElement.classList.add('dark')
+  } else {
+    isDark.value = false
+    document.documentElement.classList.remove('dark')
+  }
+
   // 1. Scrollspy for header highlighting
   scrollSpyObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
