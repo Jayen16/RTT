@@ -5,7 +5,7 @@
         <div class="flex items-center gap-3">
           <img src="/rrt.png" alt="RTT logo" class="h-9 w-9 rounded-md bg-white/95 p-1" />
           <div>
-            <p class="text-sm font-semibold tracking-wide sm:text-base">RTT Constructions CORP</p>
+            <p class="text-sm font-semibold tracking-wide sm:text-base">RTT Constructors CORP</p>
             <p class="text-[11px] uppercase tracking-[0.18em] text-white/70">Company Profile</p>
           </div>
         </div>
@@ -42,7 +42,7 @@
               <img src="/rrt.png" alt="RTT mini logo" class="h-full w-full object-contain" />
             </div>
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#0800f5]">Construction Excellence</p>
-            <h1 class="mt-3 text-4xl font-bold leading-tight md:text-6xl">RTT Constructions</h1>
+            <h1 class="mt-3 text-4xl font-bold leading-tight md:text-6xl">RTT Constructors</h1>
             <p class="mt-4 max-w-xl text-base text-black/65 md:text-lg">Delivering civil, structural, and fit-out projects with strong planning, safe execution, and reliable handover.</p>
 
             <div class="mt-9 flex items-center gap-3">
@@ -66,7 +66,7 @@
               @mousemove="onLogoMove"
               @mouseleave="resetLogoTilt"
             >
-              <img src="/rrt.png" alt="RTT Constructions logo" class="logoMain" />
+              <img src="/rrt.png" alt="RTT Constructors logo" class="logoMain" />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
 
       <section class="section-reveal px-4 sm:px-6 lg:px-8" data-section="band">
         <div class="mx-auto w-full max-w-6xl bg-[#151515] px-6 py-8 text-white sm:px-10 sm:py-10">
-          <p class="text-xl font-semibold tracking-[0.18em]">RTT CONSTRUCTIONS CORP</p>
+          <p class="text-xl font-semibold tracking-[0.18em]">RTT Constructors CORP</p>
           <p class="mt-3 max-w-4xl text-sm leading-relaxed text-white/70 sm:text-base">
             We build infrastructure that lasts. Our team handles pre-construction planning, site execution, and quality control to deliver projects on schedule while meeting strict safety and workmanship standards.
           </p>
@@ -93,7 +93,7 @@
           <div class="sectionTag mx-auto"><span>Company Overview</span></div>
           <h2 class="mt-7 text-center text-3xl font-bold md:text-4xl">Built on trust, driven by discipline.</h2>
           <p class="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-black/70 sm:text-base">
-            RTT Constructions CORP specializes in structural works, commercial fit-outs, and civil support packages. From planning and technical coordination to on-site delivery, we align every phase to quality, budget, and timeline goals.
+            RTT Constructors CORP specializes in structural works, commercial fit-outs, and civil support packages. From planning and technical coordination to on-site delivery, we align every phase to quality, budget, and timeline goals.
           </p>
           <div class="mx-auto mt-8 w-fit border-x border-black/40 px-6 py-1 text-xs font-semibold uppercase tracking-[0.14em]">Explore</div>
         </div>
@@ -184,7 +184,7 @@
       <section id="contact" data-section="contact" class="section-reveal section-shell px-4 pb-16 sm:px-6 lg:px-8">
         <div class="mx-auto w-full max-w-6xl">
           <div class="sectionTag"><span>Get In Touch</span></div>
-          <div class="mt-10 grid gap-5 lg:grid-cols-[1fr_1.1fr]">
+          <div class="mt-10 grid gap-5 md:grid-cols-[1fr_1.1fr]">
             
             <!-- FLIP CARD CONTAINER -->
             <div class="contactFlipContainer" :class="{ flipped: contactFlipped }">
@@ -234,7 +234,7 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps?q=Manila%20Philippines&output=embed"
-                title="RTT Constructions location"
+                title="RTT Constructors location"
               ></iframe>
             </div>
           </div>
@@ -245,7 +245,7 @@
     <footer class="bg-black text-white">
       <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
-          <p class="text-lg font-semibold">RTT Constructions CORP</p>
+          <p class="text-lg font-semibold">RTT Constructors CORP</p>
           <p class="mt-2 text-sm text-white/70">Reliable structures. Strong partnerships. Built for long-term performance.</p>
         </div>
 
@@ -265,7 +265,7 @@
             <li>Manila, Philippines</li>
             <li>Mon-Sat • 8:00 AM - 5:00 PM</li>
             <li>+63 000 000 0000</li>
-            <li>info@rttconstructions.example</li>
+            <li>info@rttConstructors.example</li>
           </ul>
         </div>
 
@@ -282,13 +282,13 @@
               <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="4" height="11" /><circle cx="6" cy="5.5" r="1.5" /><path d="M12 20V9H16C18.2 9 20 10.8 20 13V20" /></svg>
             </a>
           </div>
-          <button class="contactBtn mt-5" @click="scrollToSection('contact'); contactFlipped = true">Back to Top</button>
+          <button class="contactBtn mt-5" @click="scrollToTop()">Back to Top</button>
         </div>
       </div>
 
       <div class="border-t border-white/10">
         <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 text-xs text-white/60 sm:px-6 lg:px-8">
-          <span>© {{ new Date().getFullYear() }} RTT Constructions CORP. All rights reserved.</span>
+          <span>© {{ new Date().getFullYear() }} RTT Constructors CORP. All rights reserved.</span>
           <span class="inline-flex items-center gap-2"><i class="h-2 w-2 rounded-full bg-[#0800f5]"></i><i class="h-2 w-2 rounded-full bg-[#d1251b]"></i></span>
         </div>
       </div>
@@ -507,7 +507,7 @@ onBeforeUnmount(() => {
 .contactFlipContainer {
   position: relative;
   width: 100%;
-  min-height: auto;
+  min-height: 420px;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
@@ -515,8 +515,9 @@ onBeforeUnmount(() => {
 .contactFlipFront,
 .contactFlipBack {
   position: absolute;
+  inset: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   backface-visibility: hidden;
   transition: transform 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -961,6 +962,10 @@ onBeforeUnmount(() => {
   .formTextarea {
     height: 100px !important;
     max-height: 120px;
+  }
+
+  .contactFlipContainer {
+    min-height: 460px;
   }
 }
 
