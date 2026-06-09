@@ -202,28 +202,28 @@
 
               <!-- BACK SIDE (FORM) -->
               <div class="contactFlipBack">
-                <form class="rounded-xl border border-black/15 bg-white p-6 shadow-[0_12px_30px_rgba(0,0,0,0.06)] sm:p-8 h-full flex flex-col" @submit.prevent="onSubmit">
-                  <h3 class="text-2xl font-semibold">Contact us</h3>
-                  <p class="mt-2 text-sm text-black/70">Share your project requirement, location, and timeline.</p>
+                <form class="rounded-xl border border-black/15 bg-white p-6 shadow-[0_12px_30px_rgba(0,0,0,0.06)] sm:p-8 flex flex-col" @submit.prevent="onSubmit">
+                  <h3 class="text-2xl font-semibold text-black">Contact us</h3>
+                  <p class="mt-2 text-sm text-black/60">Share your project requirement, location, and timeline.</p>
 
-                  <label class="mt-5 block">
-                    <span class="text-xs font-semibold uppercase tracking-[0.12em] text-black/70">Name</span>
-                    <input v-model.trim="form.name" required class="mt-2 w-full rounded-md border border-black/20 px-3 py-3 outline-none transition focus:border-black" placeholder="Your name" />
+                  <label class="mt-6 block">
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-black/80">Name</span>
+                    <input v-model.trim="form.name" required class="formInput mt-2.5 w-full" placeholder="John Smith" />
                   </label>
                   <label class="mt-4 block">
-                    <span class="text-xs font-semibold uppercase tracking-[0.12em] text-black/70">Email</span>
-                    <input v-model.trim="form.email" type="email" required class="mt-2 w-full rounded-md border border-black/20 px-3 py-3 outline-none transition focus:border-black" placeholder="name@email.com" />
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-black/80">Email</span>
+                    <input v-model.trim="form.email" type="email" required class="formInput mt-2.5 w-full" placeholder="john@example.com" />
                   </label>
-                  <label class="mt-4 block flex-1">
-                    <span class="text-xs font-semibold uppercase tracking-[0.12em] text-black/70">Message</span>
-                    <textarea v-model.trim="form.message" rows="3" required class="mt-2 w-full h-full rounded-md border border-black/20 px-3 py-3 outline-none transition focus:border-black resize-none" placeholder="Tell us about your project" />
+                  <label class="mt-4 block">
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-black/80">Message</span>
+                    <textarea v-model.trim="form.message" required class="formInput formTextarea mt-2.5 w-full" placeholder="Tell us about your project..." />
                   </label>
 
                   <div class="mt-5 flex gap-3">
-                    <button class="contactBtn" type="submit">Send</button>
-                    <button class="border border-black/20 rounded-full px-4 py-2 text-xs font-semibold uppercase transition hover:bg-black/5" type="button" @click="contactFlipped = false">Back</button>
+                    <button class="contactBtn font-semibold" type="submit">Send Message</button>
+                    <button class="formBackBtn" type="button" @click="contactFlipped = false">Back</button>
                   </div>
-                  <p v-if="submitted" class="mt-3 text-sm font-medium text-[#d1251b]">Thanks! Your message is ready to send. (Demo form)</p>
+                  <p v-if="submitted" class="mt-3 text-sm font-semibold text-[#0800f5]">✓ Message ready! (Demo form)</p>
                 </form>
               </div>
             </div>
@@ -507,7 +507,7 @@ onBeforeUnmount(() => {
 .contactFlipContainer {
   position: relative;
   width: 100%;
-  min-height: 380px;
+  min-height: auto;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
@@ -516,7 +516,7 @@ onBeforeUnmount(() => {
 .contactFlipBack {
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   backface-visibility: hidden;
   transition: transform 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -535,6 +535,62 @@ onBeforeUnmount(() => {
 
 .contactFlipContainer.flipped .contactFlipBack {
   transform: rotateY(0deg);
+}
+
+.formInput {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background: #f8f8f8;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: #111;
+  outline: none;
+  transition: all 260ms ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.formInput::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 500;
+}
+
+.formInput:focus {
+  border-color: #0800f5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(8, 0, 245, 0.08), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.formTextarea {
+  font-family: inherit;
+  resize: none;
+  height: 120px !important;
+  max-height: 140px;
+}
+
+.formBackBtn {
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #111;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 220ms ease;
+  cursor: pointer;
+}
+
+.formBackBtn:hover {
+  border-color: #0800f5;
+  background: #f8f8f8;
+  color: #0800f5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(8, 0, 245, 0.15);
 }
 
 .hero-shell {
@@ -895,6 +951,16 @@ onBeforeUnmount(() => {
 
   .carousel-content p {
     font-size: 0.9rem;
+  }
+
+  .formInput {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.88rem;
+  }
+
+  .formTextarea {
+    height: 100px !important;
+    max-height: 120px;
   }
 }
 

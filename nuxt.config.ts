@@ -6,15 +6,12 @@ export default defineNuxtConfig({
   pages: true,
   modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/tailwind.css'],
-    app: {
+  app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/rtt.png' },
-        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/rtt.png' },
-        { rel: 'apple-touch-icon', href: '/rtt.png' },
-
-        // fallback (recommended)
-        { rel: 'icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/png', href: '/rtt.png' },
+        { rel: 'shortcut icon', type: 'image/png', href: '/rtt.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', href: '/rtt.png' }
       ]
     }
   }
