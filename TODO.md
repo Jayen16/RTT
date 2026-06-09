@@ -1,0 +1,4 @@
+- [x] Replace `pages/index.vue` scoped CSS with complete styles for all template classes (hero, buttons, sections, cards, form, footer, map, animations, responsiveness).
+- [x] Add missing CSS for referenced classes like `.animateIn`.
+- [ ] Run `npm run dev` and visually verify styling.
+- [ ] Fix any CSS/markup issues found in the browser.
